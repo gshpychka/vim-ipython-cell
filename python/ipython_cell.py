@@ -83,6 +83,9 @@ def jump_next_cell():
             vim.current.window.cursor = (next_cell_row, 0)
         except vim.error:
             vim.command("echo 'Cell header is outside the buffer boundaries'")
+    else:
+        vim.command('exec "norm Go\\<Cr>##\\<Esc>"')
+
 
 
 def jump_prev_cell():
